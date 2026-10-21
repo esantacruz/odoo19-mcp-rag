@@ -1,5 +1,11 @@
 # Cambios
 
+## Actualización de documentación — 2026-10-21
+
+- Ubicación independiente del RAG bajo `data/` en el prefijo de instalación.
+- Aclaración de que `--use-existing-data` utiliza una ruta externa sin copiarla.
+- Procedimiento para trasladar los datos existentes y configurar el cliente por HTTP.
+
 ## 1.1.0 — 2026-10-21
 
 - Instalador Linux con entorno Python aislado y dependencias fijadas en `uv.lock`.
