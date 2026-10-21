@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "odoo19-docs": {
+      "command": "/absolute/path/to/odoo19-mcp-rag/.venv/bin/python",
+      "args": [
+        "/absolute/path/to/odoo19-mcp-rag/src/server.py"
+      ],
+      "cwd": "/absolute/path/to/odoo19-mcp-rag",
+      "env": {
+        "ODOO_RAG_DATA_DIR": "/absolute/path/to/odoo19-mcp-rag/data",
+        "ODOO_RAG_EMBEDDING_PROVIDER": "local",
+        "ODOO_RAG_OFFLINE": "true"
+      }
+    }
+  }
+}
