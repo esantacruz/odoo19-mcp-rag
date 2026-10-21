@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+control_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$control_root/scripts/manage.py" uninstall "$@"
