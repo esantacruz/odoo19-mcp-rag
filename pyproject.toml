@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "odoo19-mcp-rag"
+version = "1.1.0"
+description = "Local MCP retrieval over official Odoo 19 documentation"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "mcp>=1.26,<2",
+  "chromadb>=1.0,<2",
+  "sentence-transformers>=5,<6",
+  "torch>=2.6,<3",
+  "tiktoken>=0.9,<1",
+  "filelock>=3.16,<4",
+  "python-dotenv>=1,<2",
+  "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=2,<3"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.11,<1"]
+
+[project.urls]
+Repository = "https://github.com/esantacruz/odoo19-mcp-rag"
+Issues = "https://github.com/esantacruz/odoo19-mcp-rag/issues"
+
+[project.scripts]
+odoo19-ingest = "src.ingest:main"
+odoo19-mcp = "src.server:main"
+odoo19-status = "src.status:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = ["integration: requires downloaded local model and an ingested real corpus"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
