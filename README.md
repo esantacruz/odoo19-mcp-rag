@@ -19,6 +19,11 @@ de usuario de systemd que arranca con el equipo y se reinicia ante fallos. Al fi
 endpoint MCP es **`http://127.0.0.1:8019/mcp`**, accesible desde clientes locales por Streamable HTTP.
 Valida el servicio con una consulta MCP real antes de informar éxito.
 
+La instalación normal conserva el programa y el RAG en `~/.local/share/odoo19-mcp-rag/`:
+el índice, las fuentes y el modelo quedan dentro de `data/`. No depende de la carpeta desde
+la que se clonó el proyecto. `--use-existing-data` es una excepción explícita: utiliza la
+carpeta indicada sin copiarla y mantiene esa dependencia hasta que se migren los datos.
+
 Consulte [instalación, configuración de clientes y desinstalación](docs/INSTALLATION.md).
 El transporte `stdio` sigue disponible para clientes que inician su propio proceso.
 
