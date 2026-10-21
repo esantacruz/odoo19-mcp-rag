@@ -1,0 +1,11 @@
+This is an independent project, not an official Odoo or OpenAI product.
+
+The project source code is licensed under the MIT License.
+Downloaded Odoo documentation is owned by Odoo S.A. and its contributors and
+is licensed separately under CC BY-SA 4.0:
+https://github.com/odoo/documentation/blob/19.0/LICENSE
+
+Documentation, vector databases, downloaded models, credentials, and local
+installation paths are not included in the public source distribution.
+The default MiniLM model is licensed separately under Apache 2.0:
+https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
